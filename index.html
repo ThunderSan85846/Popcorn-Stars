@@ -2,25 +2,25 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🎬 Popcorn Stars 🎮</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <p id="popup-message"></p>
-      <div id="popup-buttons"></div>
+  <div id="form-container" class="hidden">
+    <h2 id="form-title"></h2>
+    <input type="text" id="username" placeholder="Nome de usuário" />
+    <input type="password" id="password" placeholder="Senha" />
+    <div class="form-buttons">
+      <button id="form-submit">Confirmar</button>
+      <button id="form-cancel">Cancelar</button>
     </div>
   </div>
 
-  <div id="form-container" class="hidden">
-    <h2 id="form-title">Login</h2>
-    <input type="text" id="username" placeholder="Nome de usuário" />
-    <input type="password" id="password" placeholder="Senha" />
-    <div class="button-row">
-      <button id="confirm-button">Confirmar</button>
-      <button id="cancel-button">Voltar</button>
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-box">
+      <div id="modal-message">Mensagem</div>
+      <div id="modal-buttons"></div>
     </div>
   </div>
 
