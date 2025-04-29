@@ -1,5 +1,5 @@
 let isLoggedIn = false;
-let accounts = {}; // Simulação de banco de dados
+let accounts = JSON.parse(localStorage.getItem("popcorn_accounts")) || {};
 
 window.onload = () => {
   alert("Olá, bem-vindo ao Popcorn Stars!");
@@ -37,8 +37,13 @@ function showLoginOrCreate(hasAccount) {
   const cancelButton = document.getElementById("cancel-button");
 
   confirmButton.onclick = () => {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+    const user = document.getElementById("username").value.trim();
+    const pass = document.getElementById("password").value.trim();
+
+    if (!user || !pass) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
 
     if (hasAccount) {
       if (accounts[user] && accounts[user] === pass) {
@@ -53,6 +58,7 @@ function showLoginOrCreate(hasAccount) {
         alert("Erro ao criar a conta. Usuário já existe.");
       } else {
         accounts[user] = pass;
+        localStorage.setItem("popcorn_accounts", JSON.stringify(accounts));
         isLoggedIn = true;
         alert("Conta criada com sucesso!");
         endGame();
