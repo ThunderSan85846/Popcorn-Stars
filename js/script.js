@@ -70,3 +70,4 @@ function endGame() {
   document.getElementById("form-container").classList.add("hidden");
   alert("Obrigado por jogar Popcorn Stars!");
 }
+s
