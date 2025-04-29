@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Popcorn Stars</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎬 Popcorn Stars 🎮</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Bem-vindo ao jogo!</h1>
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="popup-message"></p>
+      <div id="popup-buttons"></div>
+    </div>
+  </div>
 
-    <script src="js/main.js"></script>
+  <div id="form-container" class="hidden">
+    <h2 id="form-title">Login</h2>
+    <input type="text" id="username" placeholder="Nome de usuário" />
+    <input type="password" id="password" placeholder="Senha" />
+    <div class="button-row">
+      <button id="confirm-button">Confirmar</button>
+      <button id="cancel-button">Voltar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
