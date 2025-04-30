@@ -2,20 +2,22 @@ let users = {};
 
 function startTutorial() {
   alert("Iniciando o tutorial...");
-  showScreen("account");
+  showScreen("intro");
 }
 
 function skipTutorial() {
   alert("Pulando o tutorial. Indo direto para o jogo!");
-  showScreen("account");
+  showScreen("intro");
 }
 
 function showScreen(screen) {
+  // Oculta todas as seções
   document.querySelectorAll(".modal").forEach(div => div.classList.add("hidden"));
+  document.getElementById("game-screen").style.display = "none";
+
   if (screen === "start") {
     document.getElementById("game-screen").style.display = "block";
   } else {
-    document.getElementById("game-screen").style.display = "none";
     document.getElementById(`${screen}-screen`).classList.remove("hidden");
   }
 }
