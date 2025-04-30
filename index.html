@@ -1,16 +1,47 @@
-<form id="form-login" class="hidden" onsubmit="return fazerLogin()">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popcorn Stars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="main-container">
+    <h1>🎬 Popcorn Stars 🎮</h1>
+    <div id="game-screen">
+      <p>Olá, bem-vindo ao Popcorn Stars!</p>
+      <button onclick="startTutorial()">Jogar Tutorial</button>
+      <button onclick="skipTutorial()">Pular Tutorial</button>
+    </div>
+
+    <div id="login-screen" class="modal hidden">
       <h2>Login</h2>
-      <input type="text" id="login-user" placeholder="Usuário" required />
-      <input type="password" id="login-pass" placeholder="Senha" required />
-      <button type="submit">Entrar</button>
-      <button type="button" onclick="voltarConta()">Voltar</button>
-    </form>
-    
-    <form id="form-criar" class="hidden" onsubmit="return criarConta()">
+      <input type="text" id="login-username" placeholder="Usuário" />
+      <input type="password" id="login-password" placeholder="Senha" />
+      <button onclick="handleLogin()">Entrar</button>
+      <button onclick="showScreen('start')">Voltar</button>
+    </div>
+
+    <div id="register-screen" class="modal hidden">
       <h2>Criar Conta</h2>
-      <input type="text" id="new-user" placeholder="Novo usuário" required />
-      <input type="password" id="new-pass" placeholder="Nova senha" required />
-      <button type="submit">Criar Conta</button>
-      <button type="button" onclick="voltarConta()">Voltar</button>
-    </form>
-    
+      <input type="text" id="register-username" placeholder="Novo usuário" />
+      <input type="password" id="register-password" placeholder="Nova senha" />
+      <button onclick="handleRegister()">Criar Conta</button>
+      <button onclick="showScreen('start')">Voltar</button>
+    </div>
+
+    <div id="account-screen" class="modal hidden">
+      <p>Você já tem uma conta?</p>
+      <button onclick="showScreen('login')">Sim, fazer login</button>
+      <button onclick="showScreen('register')">Não, criar conta</button>
+    </div>
+
+    <div id="final-screen" class="modal hidden">
+      <h2>Obrigado por jogar Popcorn Stars!</h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
