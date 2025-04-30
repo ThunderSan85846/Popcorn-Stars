@@ -1,54 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
-      background-color: #222;
-        color: #fff;
-          display: flex;
-            justify-content: center;
-              align-items: start;
-                padding: 50px;
-                  margin: 0;
-                  }
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 50px;
+  margin: 0;
+}
 
-                  #main-container {
-                    max-width: 400px;
-                      background: #333;
-                        padding: 30px;
-                          border-radius: 12px;
-                            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-                            }
+#main-container {
+  max-width: 400px;
+  background: #333;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
 
-                            h1, h2 {
-                              text-align: center;
-                              }
+h1, h2 {
+  text-align: center;
+}
 
-                              button {
-                                width: 100%;
-                                  padding: 10px;
-                                    margin-top: 10px;
-                                      font-size: 16px;
-                                        background-color: #ffcc00;
-                                          border: none;
-                                            border-radius: 6px;
-                                              cursor: pointer;
-                                              }
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-                                              button:hover {
-                                                background-color: #ff9900;
-                                                }
+button:hover {
+  background-color: #ff9900;
+}
 
-                                                input {
-                                                  width: 100%;
-                                                    padding: 8px;
-                                                      margin: 6px 0;
-                                                        border-radius: 6px;
-                                                          border: 1px solid #ccc;
-                                                          }
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
 
-                                                          .modal {
-                                                            display: none;
-                                                            }
+.modal {
+  display: none;
+}
 
-                                                            .hidden {
-                                                              display: none;
-                                                              }.
+.hidden {
+  display: none;
 }
