@@ -1,46 +1,90 @@
-let users = {};
+const dialogoContainer = document.getElementById("dialogo-container");
+const botoesTutorial = document.getElementById("botoes-tutorial");
+const botoesConta = document.getElementById("botoes-conta");
+const formLogin = document.getElementById("form-login");
+const formCriar = document.getElementById("form-criar");
 
-function startTutorial() {
-  alert("Iniciando o tutorial...");
-  showScreen("account");
+let usuarioSalvo = "usuario";
+let senhaSalva = "senha";
+
+function mostrarTexto(texto, callback) {
+  dialogoContainer.innerHTML = "";
+  const p = document.createElement("p");
+  dialogoContainer.appendChild(p);
+
+  let i = 0;
+  const intervalo = setInterval(() => {
+    p.textContent += texto[i++];
+    if (i >= texto.length) {
+      clearInterval(intervalo);
+      if (callback) callback();
+    }
+  }, 40);
 }
 
-function skipTutorial() {
-  alert("Pulando o tutorial. Indo direto para o jogo!");
-  showScreen("account");
+function iniciar() {
+  mostrarTexto("Olá, bem-vindo ao Popcorn Stars!", () => {
+    setTimeout(() => {
+      mostrarTexto("Você parece ser novo por aqui", () => {
+        botoesTutorial.classList.remove("hidden");
+      });
+    }, 1000);
+  });
 }
 
-function showScreen(screen) {
-  document.querySelectorAll(".modal").forEach(div => div.classList.add("hidden"));
-  if (screen === "start") {
-    document.getElementById("game-screen").style.display = "block";
-  } else {
-    document.getElementById("game-screen").style.display = "none";
-    document.getElementById(`${screen}-screen`).classList.remove("hidden");
-  }
+function escolherTutorial(jogar) {
+  botoesTutorial.classList.add("hidden");
+  mostrarTexto(jogar ? "Iniciando o tutorial..." : "Pulando o tutorial. Indo direto para o jogo!", () => {
+    setTimeout(() => {
+      mostrarTexto("Você já tem uma conta?", () => {
+        botoesConta.classList.remove("hidden");
+      });
+    }, 1000);
+  });
 }
 
-function handleLogin() {
-  const username = document.getElementById("login-username").value;
-  const password = document.getElementById("login-password").value;
+function mostrarLogin() {
+  botoesConta.classList.add("hidden");
+  formLogin.classList.remove("hidden");
+}
 
-  if (users[username] && users[username] === password) {
+function mostrarCriarConta() {
+  botoesConta.classList.add("hidden");
+  formCriar.classList.remove("hidden");
+}
+
+function voltarConta() {
+  formLogin.classList.add("hidden");
+  formCriar.classList.add("hidden");
+  mostrarTexto("Você já tem uma conta?", () => {
+    botoesConta.classList.remove("hidden");
+  });
+}
+
+function fazerLogin() {
+  const user = document.getElementById("login-user").value;
+  const pass = document.getElementById("login-pass").value;
+  if (user === usuarioSalvo && pass === senhaSalva) {
     alert("Login bem-sucedido!");
-    showScreen("final");
+    location.reload();
   } else {
     alert("Usuário ou senha incorretos.");
   }
+  return false;
 }
 
-function handleRegister() {
-  const username = document.getElementById("register-username").value;
-  const password = document.getElementById("register-password").value;
-
-  if (users[username]) {
-    alert("Esse usuário já existe.");
+function criarConta() {
+  const user = document.getElementById("new-user").value;
+  const pass = document.getElementById("new-pass").value;
+  if (user === usuarioSalvo) {
+    alert("Esse nome de usuário já existe.");
   } else {
-    users[username] = password;
+    usuarioSalvo = user;
+    senhaSalva = pass;
     alert("Conta criada com sucesso!");
-    showScreen("final");
+    location.reload();
   }
+  return false;
 }
+
+window.onload = iniciar;
