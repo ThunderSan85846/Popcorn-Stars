@@ -1,50 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Popcorn Stars</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="app">
-    <h1>🎬 Popcorn Stars 🎮</h1>
-    <div id="dialogo-container">
-      <!-- As mensagens aparecerão aqui -->
-    </div>
-
-    <div id="botoes-tutorial" class="hidden">
-      <button onclick="escolherTutorial(true)">Jogar Tutorial</button>
-      <button onclick="escolherTutorial(false)">Pular Tutorial</button>
-    </div>
-
-    <div id="botoes-conta" class="hidden">
-      <p>Você já tem uma conta?</p>
-      <button onclick="mostrarLogin()">Sim, fazer login</button>
-      <button onclick="mostrarCriarConta()">Não, criar conta</button>
-    </div>
-
-    <form id="form-login" class="hidden" onsubmit="return fazerLogin()">
+<form id="form-login" class="hidden" onsubmit="return fazerLogin()">
       <h2>Login</h2>
-      <label>Usuário</label>
-      <input type="text" id="login-user" required />
-      <label>Senha</label>
-      <input type="password" id="login-pass" required />
+      <input type="text" id="login-user" placeholder="Usuário" required />
+      <input type="password" id="login-pass" placeholder="Senha" required />
       <button type="submit">Entrar</button>
       <button type="button" onclick="voltarConta()">Voltar</button>
     </form>
-
+    
     <form id="form-criar" class="hidden" onsubmit="return criarConta()">
       <h2>Criar Conta</h2>
-      <label>Novo usuário</label>
-      <input type="text" id="new-user" required />
-      <label>Nova senha</label>
-      <input type="password" id="new-pass" required />
+      <input type="text" id="new-user" placeholder="Novo usuário" required />
+      <input type="password" id="new-pass" placeholder="Nova senha" required />
       <button type="submit">Criar Conta</button>
       <button type="button" onclick="voltarConta()">Voltar</button>
     </form>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    
