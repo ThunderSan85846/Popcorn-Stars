@@ -1,21 +1,62 @@
-/* Efeitos de transição entre telas */
-.modal {
-  opacity: 0;
-  transform: scale(0.98);
-  pointer-events: none;
-  transition: all 0.4s ease;
-  display: block;
-  position: absolute;
-  top: 120px;
-  width: 100%;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  margin: 0;
 }
 
-.modal.show {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+#main-container {
+  max-width: 400px;
+  background: #333;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff9900;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal {
+  display: none;
 }
 
 .hidden {
   display: none !important;
+}
+
+.fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
