@@ -10,20 +10,19 @@
   <div id="main-container">
     <h1>🎬 Popcorn Stars 🎮</h1>
     <div id="game-screen">
-      <p id="welcome-text"></p>
-      <div id="tutorial-buttons" class="hidden">
-        <button onclick="startTutorial()">Jogar Tutorial</button>
-        <button onclick="skipTutorial()">Pular Tutorial</button>
-      </div>
+      <p>Olá, bem-vindo ao Popcorn Stars!</p>
+      <p id="intro-text" class="hidden">Você parece ser novo por aqui</p>
+      <button onclick="startTutorial()">Jogar Tutorial</button>
+      <button onclick="skipTutorial()">Pular Tutorial</button>
     </div>
 
-    <div id="account-screen" class="modal hidden fade">
+    <div id="account-screen" class="modal hidden">
       <p>Você já tem uma conta?</p>
       <button onclick="showScreen('login')">Sim, fazer login</button>
       <button onclick="showScreen('register')">Não, criar conta</button>
     </div>
 
-    <div id="login-screen" class="modal hidden fade">
+    <div id="login-screen" class="modal hidden">
       <h2>Login</h2>
       <input type="text" id="login-username" placeholder="Usuário" />
       <input type="password" id="login-password" placeholder="Senha" />
@@ -31,7 +30,7 @@
       <button onclick="showScreen('account')">Voltar</button>
     </div>
 
-    <div id="register-screen" class="modal hidden fade">
+    <div id="register-screen" class="modal hidden">
       <h2>Criar Conta</h2>
       <input type="text" id="register-username" placeholder="Novo usuário" />
       <input type="password" id="register-password" placeholder="Nova senha" />
@@ -39,12 +38,12 @@
       <button onclick="showScreen('account')">Voltar</button>
     </div>
 
-    <div id="final-screen" class="modal hidden fade">
+    <div id="final-screen" class="modal hidden">
       <h2>Obrigado por jogar Popcorn Stars!</h2>
     </div>
   </div>
 
-  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+  <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
   <script src="script.js"></script>
 </body>
 </html>
